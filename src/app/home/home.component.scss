@@ -1,39 +1,25 @@
-@font-face {
-  font-family: "Gotham";
-  src: url(../../assets/fonts/gotham-black.woff2);
-}
-
-@font-face {
-  font-family: "Gotham";
-  src: url(../../assets/fonts/gotham-bold.woff2);
-}
-
-@font-face {
-  font-family: "Gotham";
-  src: url(../../assets/fonts/gotham-book.woff2);
-}
-
-@font-face {
-  font-family: "Gotham";
-  src: url(../../assets/fonts/gotham-light.woff2);
-}
-
 .header {
   width: 100vw;
-  height: 60px;
+  height: 100px;
   background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
 
   img {
-    height: 35px;
+    height: 60px;
   }
 }
 
 .body {
-  width: 100vw;
-  height: 500px;
+  padding: 70px 200px;
+  height: 1200px;
+
+  .top {
+    .title {
+      font-weight: bold;
+    }
+  }
 }
 
 .footer {
