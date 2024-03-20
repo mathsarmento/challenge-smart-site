@@ -12,6 +12,45 @@
     </p>
   </div>
 </div>
+<div class="form">
+  <div class="form-icon">
+    <img src="../../assets/icon/icon-hour.png" alt="icon" />
+    <p>Horário</p>
+  </div>
+  <h3>Qual período quer treinar?</h3>
+  <mat-radio-group
+    aria-labelledby="periodo de treino"
+    class="form-radio"
+    [(ngModel)]="teste"
+  >
+    <mat-radio-button
+      class="form-radio-button"
+      *ngFor="let periodo of periodos"
+      [value]="periodo.value"
+    >
+      <div class="form-radio-space">
+        <p>
+          {{ periodo.tipo }}
+        </p>
+        <p>
+          {{ periodo.horario }}
+        </p>
+      </div>
+    </mat-radio-button>
+  </mat-radio-group>
+  <div class="form-checkbox">
+    <p>
+      <mat-checkbox [(ngModel)]="teste2">Exibir unidades fechadas</mat-checkbox>
+    </p>
+    <p>Resultado encontrados 0</p>
+  </div>
+  <div class="form-buttons">
+    <button mat-raised-button color="primary">ENCONTRAR UNIDADE</button>
+    <button mat-raised-button>LIMPAR</button>
+  </div>
+</div>
+<div class="legend"></div>
+<div class="list"></div>
 <div class="footer">
   <img src="./../../assets/logo.svg" alt="" />
   <p>Todos os direitos reservados - 2020</p>

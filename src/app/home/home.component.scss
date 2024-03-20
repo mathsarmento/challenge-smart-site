@@ -22,6 +22,40 @@
   }
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #808080;
+  border-radius: 10px;
+
+  .form-icon {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+      height: 24px;
+    }
+  }
+
+  .form-radio {
+    display: flex;
+    flex-direction: column;
+
+    .form-radio-button > .form-radio-space {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  .form-checkbox {
+  }
+
+  .form-buttons {
+  }
+}
+
 .footer {
   width: 100vw;
   height: 150px;
