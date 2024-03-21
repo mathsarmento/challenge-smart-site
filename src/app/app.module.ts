@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +10,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
@@ -19,6 +21,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

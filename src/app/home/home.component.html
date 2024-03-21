@@ -1,57 +1,65 @@
-<div class="header">
-  <img src="./../../assets/logo.svg" alt="" />
-</div>
-<div class="body">
-  <div class="top">
-    <h2 class="title">REABERTURA SMART FIT</h2>
-    <div class="divider"></div>
-    <p class="description">
-      O horário de funcionamento das nossas unidades está seguindo os decretos
-      de cada município. Por isso, confira aqui se a sua unidade está aberta e
-      as medidas de segurança que estamos seguindo.
-    </p>
+<div class="center">
+  <div class="header">
+    <img src="./../../assets/logo.svg" alt="" />
   </div>
-</div>
-<div class="form">
-  <div class="form-icon">
-    <img src="../../assets/icon/icon-hour.png" alt="icon" />
-    <p>Horário</p>
-  </div>
-  <h3>Qual período quer treinar?</h3>
-  <mat-radio-group
-    aria-labelledby="periodo de treino"
-    class="form-radio"
-    [(ngModel)]="teste"
-  >
-    <mat-radio-button
-      class="form-radio-button"
-      *ngFor="let periodo of periodos"
-      [value]="periodo.value"
-    >
-      <div class="form-radio-space">
-        <p>
-          {{ periodo.tipo }}
-        </p>
-        <p>
-          {{ periodo.horario }}
-        </p>
+  <div class="body">
+    <div class="top">
+      <h2 class="title">REABERTURA SMART FIT</h2>
+      <div class="divider"></div>
+      <p class="description">
+        O horário de funcionamento das nossas unidades está seguindo os decretos
+        de cada município. Por isso, confira aqui se a sua unidade está aberta e
+        as medidas de segurança que estamos seguindo.
+      </p>
+    </div>
+    <div class="form">
+      <div class="form-icon">
+        <img src="../../assets/icon/icon-hour.png" alt="icon" />
+        <p>Horário</p>
       </div>
-    </mat-radio-button>
-  </mat-radio-group>
-  <div class="form-checkbox">
-    <p>
-      <mat-checkbox [(ngModel)]="teste2">Exibir unidades fechadas</mat-checkbox>
-    </p>
-    <p>Resultado encontrados 0</p>
+      <h3>Qual período quer treinar?</h3>
+      <mat-divider></mat-divider>
+      <mat-radio-group
+        aria-labelledby="periodo de treino"
+        class="form-radio"
+        [(ngModel)]="teste"
+      >
+        <div *ngFor="let periodo of periodos">
+          <mat-radio-button
+            color="primary"
+            class="form-radio-button"
+            [value]="periodo.value"
+          >
+            <p>
+              {{ periodo.tipo }}
+            </p>
+            <p>
+              {{ periodo.horario }}
+            </p>
+          </mat-radio-button>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-radio-group>
+      <div class="form-checkbox">
+        <p>
+          <mat-checkbox color="primary" [(ngModel)]="teste2"
+            >Exibir unidades fechadas</mat-checkbox
+          >
+        </p>
+        <p>Resultado encontrados: <b>0</b></p>
+      </div>
+      <div class="form-buttons">
+        <button mat-raised-button color="primary">
+          <b>ENCONTRAR UNIDADE</b>
+        </button>
+        <button mat-raised-button class="limpar"><b>LIMPAR</b></button>
+      </div>
+    </div>
   </div>
-  <div class="form-buttons">
-    <button mat-raised-button color="primary">ENCONTRAR UNIDADE</button>
-    <button mat-raised-button>LIMPAR</button>
+  <div class="legend"></div>
+  <div class="list"></div>
+  <div class="footer">
+    <img src="./../../assets/logo.svg" alt="" />
+    <p>Todos os direitos reservados - 2020</p>
   </div>
-</div>
-<div class="legend"></div>
-<div class="list"></div>
-<div class="footer">
-  <img src="./../../assets/logo.svg" alt="" />
-  <p>Todos os direitos reservados - 2020</p>
 </div>
