@@ -1,5 +1,5 @@
 .center {
-  width: 100%;
+  // width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -43,72 +43,98 @@
       line-height: 25px;
     }
   }
-}
 
-.form {
-  display: flex;
-  flex-direction: column;
-  border: 3px solid #80808024;
-  border-radius: 10px;
-  padding: 20px;
-
-  .form-icon {
+  .form {
     display: flex;
-    align-items: center;
-    color: #808080;
-    margin-bottom: 20px;
+    flex-direction: column;
+    border: 3px solid #80808024;
+    border-radius: 10px;
+    padding: 20px;
 
-    p {
-      font-size: 15px;
-      margin: 0;
-    }
-
-    img {
-      margin-right: 10px;
-      height: 30px;
-    }
-  }
-
-  h3 {
-    color: #808080;
-    font-weight: 100;
-    margin: 20px 0 0;
-    padding: 0 0 10px 20px;
-    font-size: 21px;
-  }
-
-  .form-radio-button > .mdc-form-field {
-    width: 100%;
-
-    label {
+    .form-icon {
+      display: flex;
+      align-items: center;
       color: #808080;
+      margin-bottom: 20px;
+
+      p {
+        font-size: 15px;
+        margin: 0;
+      }
+
+      img {
+        margin-right: 10px;
+        height: 30px;
+      }
+    }
+
+    h3 {
+      color: #808080;
+      font-weight: 100;
+      margin: 20px 0 0;
+      padding: 0 0 10px 20px;
+      font-size: 21px;
+    }
+
+    .form-radio-button > .mdc-form-field {
+      width: 100%;
+
+      label {
+        color: #808080;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+
+    .form-checkbox {
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      button {
+        font-family: "Gotham", sans-serif;
+        width: 320px;
+        height: 45px;
+        border-radius: 3px;
+      }
+
+      .limpar {
+        border: 1px solid #80808099;
+      }
     }
   }
+}
 
-  .form-checkbox {
+.legends {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #80808018;
+
+  .legend {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
-  }
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    font-size: 14px;
 
-  .form-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    .legend-info {
+      display: flex;
+      gap: 10px;
 
-    button {
-      font-family: "Gotham", sans-serif;
-      width: 320px;
-      height: 45px;
-      border-radius: 3px;
-    }
-
-    .limpar {
-      border: 1px solid #80808099;
+      img {
+        height: 60px;
+      }
     }
   }
 }
