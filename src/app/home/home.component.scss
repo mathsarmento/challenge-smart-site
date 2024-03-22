@@ -151,7 +151,8 @@
     background-color: #80808018;
     border-radius: 5px;
     width: 300px;
-    height: 450px;
+    min-height: 450px;
+    max-height: 500px;
     border: 2px solid #80808024;
 
     p {
@@ -165,7 +166,6 @@
 
     .list-opened {
       margin: 0 0 10px;
-      color: #11b711;
     }
 
     .list-title {

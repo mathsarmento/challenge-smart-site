@@ -145,120 +145,50 @@
   </div>
 
   <div class="list">
-    <div class="list-div">
-      <p class="list-opened"><b>Aberto</b></p>
-      <h3 class="list-title">Vicente Linhares</h3>
+    <div class="list-div" *ngFor="let local of locais">
+      <p
+        class="list-opened"
+        [style]="local.opened ? 'color: #2FC022;' : 'color: #dc0a17;'"
+      >
+        <b>{{ local.opened ? "Aberto" : "Fechado" }}</b>
+      </p>
+      <h3 class="list-title" [innerHTML]="local.title"></h3>
 
-      <p>Av. Dom Severino, 1733 &#8211; Fátima<br />Teresina, PI</p>
+      <p [innerHTML]="local.content">
+        <!-- Av. Dom Severino, 1733 &#8211; Fátima<br />Teresina, PI -->
+      </p>
 
-      <mat-divider></mat-divider>
-      <div class="list-desc">
-        <img src="../../assets/images/recommended-mask.png" alt="mask" />
-        <img src="../../assets/images/recommended-towel.png" alt="towel" />
-        <img src="../../assets/images/forbidden-fountain.png" alt="fountain" />
+      <mat-divider *ngIf="local.opened"></mat-divider>
+      <div class="list-desc" *ngIf="local.opened">
         <img
+          *ngIf="local.mask === 'required' || local.mask === 'recommended'"
+          src="../../assets/images/recommended-mask.png"
+          alt="mask"
+        />
+        <img
+          *ngIf="local.towel === 'required' || local.towel === 'recommended'"
+          src="../../assets/images/recommended-towel.png"
+          alt="towel"
+        />
+        <img
+          *ngIf="
+            local.fountain === 'not_allowed' || local.fountain === 'partial'
+          "
+          src="../../assets/images/forbidden-fountain.png"
+          alt="fountain"
+        />
+        <img
+          *ngIf="
+            local.locker_room === 'closed' ||
+            local.locker_room === 'partial' ||
+            local.locker_room === 'allowed'
+          "
           src="../../assets/images/forbidden-lockerroom.png"
           alt="lockerroom"
         />
       </div>
 
-      <div class="list-horarios">
-        <div class="list-horarios-div">
-          <h4>Seg. à Sex.</h4>
-          <p>06h às 22h</p>
-        </div>
-        <div class="list-horarios-div">
-          <h4>Sáb.</h4>
-          <p>09h às 18h</p>
-        </div>
-        <div class="list-horarios-div">
-          <h4>Dom.</h4>
-          <p>Fechada</p>
-        </div>
-      </div>
-    </div>
-    <div class="list-div">
-      <p class="list-opened"><b>Aberto</b></p>
-      <h3 class="list-title">Vicente Linhares</h3>
-
-      <p>Av. Dom Severino, 1733 &#8211; Fátima<br />Teresina, PI</p>
-
-      <mat-divider></mat-divider>
-      <div class="list-desc">
-        <img src="../../assets/images/recommended-mask.png" alt="mask" />
-        <img src="../../assets/images/recommended-towel.png" alt="towel" />
-        <img src="../../assets/images/forbidden-fountain.png" alt="fountain" />
-        <img
-          src="../../assets/images/forbidden-lockerroom.png"
-          alt="lockerroom"
-        />
-      </div>
-
-      <div class="list-horarios">
-        <div class="list-horarios-div">
-          <h4>Seg. à Sex.</h4>
-          <p>06h às 22h</p>
-        </div>
-        <div class="list-horarios-div">
-          <h4>Sáb.</h4>
-          <p>09h às 18h</p>
-        </div>
-        <div class="list-horarios-div">
-          <h4>Dom.</h4>
-          <p>Fechada</p>
-        </div>
-      </div>
-    </div>
-    <div class="list-div">
-      <p class="list-opened"><b>Aberto</b></p>
-      <h3 class="list-title">Vicente Linhares</h3>
-
-      <p>Av. Dom Severino, 1733 &#8211; Fátima<br />Teresina, PI</p>
-
-      <mat-divider></mat-divider>
-      <div class="list-desc">
-        <img src="../../assets/images/recommended-mask.png" alt="mask" />
-        <img src="../../assets/images/recommended-towel.png" alt="towel" />
-        <img src="../../assets/images/forbidden-fountain.png" alt="fountain" />
-        <img
-          src="../../assets/images/forbidden-lockerroom.png"
-          alt="lockerroom"
-        />
-      </div>
-
-      <div class="list-horarios">
-        <div class="list-horarios-div">
-          <h4>Seg. à Sex.</h4>
-          <p>06h às 22h</p>
-        </div>
-        <div class="list-horarios-div">
-          <h4>Sáb.</h4>
-          <p>09h às 18h</p>
-        </div>
-        <div class="list-horarios-div">
-          <h4>Dom.</h4>
-          <p>Fechada</p>
-        </div>
-      </div>
-    </div>
-    <div class="list-div">
-      <p class="list-opened"><b>Aberto</b></p>
-      <h3 class="list-title">Vicente Linhares</h3>
-
-      <p>Av. Dom Severino, 1733 &#8211; Fátima<br />Teresina, PI</p>
-
-      <mat-divider></mat-divider>
-      <div class="list-desc">
-        <img src="../../assets/images/recommended-mask.png" alt="mask" />
-        <img src="../../assets/images/recommended-towel.png" alt="towel" />
-        <img src="../../assets/images/forbidden-fountain.png" alt="fountain" />
-        <img
-          src="../../assets/images/forbidden-lockerroom.png"
-          alt="lockerroom"
-        />
-      </div>
-
-      <div class="list-horarios">
+      <div class="list-horarios" *ngIf="local.opened">
         <div class="list-horarios-div">
           <h4>Seg. à Sex.</h4>
           <p>06h às 22h</p>

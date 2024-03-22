@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ILocation } from 'src/app/shared/interfaces/academias';
+import { AcademiasService } from 'src/app/shared/services/academias.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class HomeComponent {
   public teste = '';
   public teste2 = false;
-
+  public locais: ILocation[] = [];
   public periodos = [
     {
       tipo: 'Manhã',
@@ -27,4 +29,10 @@ export class HomeComponent {
       value: 'noite',
     },
   ];
+
+  constructor(private academiasService: AcademiasService) {
+    this.academiasService.getAcademias().subscribe((data) => {
+      this.locais = data.locations;
+    });
+  }
 }
