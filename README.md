@@ -1,5 +1,19 @@
 # ChallengeSmartsite
 
+In this project, I created a page with the main objective of searching for units that offers a fluid and intuitive experience for users, maintaining consistency with the layout proposed in Material Design. The challenge was offered by <a href="https://github.com/bioritmo/front-end-code-challenge-smartsite/tree/master">Front-end Smart Fit </a>.
+
+
+<b>Features include:</b>
+
+<b>Unit Search:</b> Implementation of a search system that allows users to find Smart Fit units based on different criteria, opening hours, services offered, among others.
+
+<b>Indication of Open/Closed Units:</b> Clearly highlight which units are open and which are closed, providing up-to-date and accurate information for users.
+
+<b>Unit Details:</b> View full details for each unit, including address, opening hours, available services, plus any additional relevant information.
+
+<b>Responsive Compatibility:</b> Ensure the page is fully responsive and compatible with a variety of devices, from desktops to smartphones, for a consistent user experience across all platforms.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
 ## Development server
