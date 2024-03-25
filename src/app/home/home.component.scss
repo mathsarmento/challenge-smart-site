@@ -152,7 +152,7 @@
     border-radius: 5px;
     width: 300px;
     min-height: 450px;
-    max-height: 500px;
+    max-height: 550px;
     border: 2px solid #80808024;
 
     p {
@@ -188,6 +188,8 @@
       flex-wrap: wrap;
 
       .list-horarios-div {
+        min-width: 120px;
+
         h4 {
           font-size: 24px;
           margin: 0;

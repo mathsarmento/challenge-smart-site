@@ -23,7 +23,7 @@
       <mat-radio-group
         aria-labelledby="periodo de treino"
         class="form-radio"
-        [(ngModel)]="teste"
+        [(ngModel)]="filtro.periodo"
       >
         <div *ngFor="let periodo of periodos">
           <mat-radio-button
@@ -43,17 +43,21 @@
       </mat-radio-group>
       <div class="form-checkbox">
         <p>
-          <mat-checkbox color="primary" [(ngModel)]="teste2"
+          <mat-checkbox color="primary" [(ngModel)]="filtro.exibeFechadas"
             >Exibir unidades fechadas</mat-checkbox
           >
         </p>
-        <p>Resultado encontrados: <b>0</b></p>
+        <p>
+          Resultado encontrados: <b>{{ locais.length }}</b>
+        </p>
       </div>
       <div class="form-buttons">
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="buscar()">
           <b>ENCONTRAR UNIDADE</b>
         </button>
-        <button mat-raised-button class="limpar"><b>LIMPAR</b></button>
+        <button mat-raised-button class="limpar" (click)="limparBusca()">
+          <b>LIMPAR</b>
+        </button>
       </div>
     </div>
 
@@ -108,8 +112,8 @@
           </div>
           <div class="center">
             <img
-              src="../../assets/images/forbidden-fountain.png"
-              alt="forbidden-fountain"
+              src="../../assets/images/not_allowed-fountain.png"
+              alt="not_allowed-fountain"
             />
             <p>Proibido</p>
           </div>
@@ -120,8 +124,8 @@
         <div class="legend-info">
           <div class="center">
             <img
-              src="../../assets/images/required-lockerroom.png"
-              alt="required-lockerroom"
+              src="../../assets/images/allowed-lockerroom.png"
+              alt="allowed-lockerroom"
             />
             <p>Liberado</p>
           </div>
@@ -134,8 +138,8 @@
           </div>
           <div class="center">
             <img
-              src="../../assets/images/forbidden-lockerroom.png"
-              alt="forbidden-lockerroom"
+              src="../../assets/images/closed-lockerroom.png"
+              alt="closed-lockerroom"
             />
             <p>Fechado</p>
           </div>
@@ -154,27 +158,25 @@
       </p>
       <h3 class="list-title" [innerHTML]="local.title"></h3>
 
-      <p [innerHTML]="local.content">
-        <!-- Av. Dom Severino, 1733 &#8211; Fátima<br />Teresina, PI -->
-      </p>
+      <p [innerHTML]="local.content || local.street"></p>
 
       <mat-divider *ngIf="local.opened"></mat-divider>
       <div class="list-desc" *ngIf="local.opened">
         <img
           *ngIf="local.mask === 'required' || local.mask === 'recommended'"
-          src="../../assets/images/recommended-mask.png"
+          [src]="'../../assets/images/' + local.mask + '-mask.png'"
           alt="mask"
         />
         <img
           *ngIf="local.towel === 'required' || local.towel === 'recommended'"
-          src="../../assets/images/recommended-towel.png"
+          [src]="'../../assets/images/' + local.towel + '-towel.png'"
           alt="towel"
         />
         <img
           *ngIf="
             local.fountain === 'not_allowed' || local.fountain === 'partial'
           "
-          src="../../assets/images/forbidden-fountain.png"
+          [src]="'../../assets/images/' + local.fountain + '-fountain.png'"
           alt="fountain"
         />
         <img
@@ -183,23 +185,15 @@
             local.locker_room === 'partial' ||
             local.locker_room === 'allowed'
           "
-          src="../../assets/images/forbidden-lockerroom.png"
+          [src]="'../../assets/images/' + local.locker_room + '-lockerroom.png'"
           alt="lockerroom"
         />
       </div>
 
       <div class="list-horarios" *ngIf="local.opened">
-        <div class="list-horarios-div">
-          <h4>Seg. à Sex.</h4>
-          <p>06h às 22h</p>
-        </div>
-        <div class="list-horarios-div">
-          <h4>Sáb.</h4>
-          <p>09h às 18h</p>
-        </div>
-        <div class="list-horarios-div">
-          <h4>Dom.</h4>
-          <p>Fechada</p>
+        <div class="list-horarios-div" *ngFor="let horario of local.schedules">
+          <h4>{{ horario.weekdays }}</h4>
+          <p>{{ horario.hour }}</p>
         </div>
       </div>
     </div>
