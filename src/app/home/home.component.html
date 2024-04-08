@@ -52,8 +52,16 @@
         </p>
       </div>
       <div class="form-buttons">
-        <button mat-raised-button color="primary" (click)="buscar()">
-          <b>ENCONTRAR UNIDADE</b>
+        <button
+          mat-raised-button
+          class="encontrar-unidade"
+          color="primary"
+          (click)="buscar()"
+        >
+          <b
+            >ENCONTRAR <br class="mobile-break" />
+            UNIDADE</b
+          >
         </button>
         <button mat-raised-button class="limpar" (click)="limparBusca()">
           <b>LIMPAR</b>
